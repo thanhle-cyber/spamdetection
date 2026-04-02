@@ -130,15 +130,6 @@ y_pred = (h_test >= 0.5).astype(int)
 
 print(classification_report(y_test, y_pred, target_names=['Ham (0)', 'Spam (1)'], digits=4))
 
-# Confusion Matrix
-cm = confusion_matrix(y_test, y_pred)
-plt.figure(figsize=(6, 5))
-sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
-            xticklabels=['Ham', 'Spam'], yticklabels=['Ham', 'Spam'])
-plt.title('Confusion Matrix - Tập Test (1000 emails)')
-plt.ylabel('True Label')
-plt.xlabel('Predicted Label')
-plt.show()
 
 acc = accuracy_score(y_test, y_pred)
 print(f"\nĐộ chính xác tổng thể: {acc*100:.2f}%")
